@@ -24,15 +24,15 @@ globalis talalatokSzama = 0
 
 
 main(
-feladatKiiras()
+feladatKiiras() Da
 
-tombFeltolt() --manuálisan feltöltjük a tömböt 3 db 2 betűs szóval
-szoKivalaszt() -- Randommal kiválasztunk 1 szót a tömbből a kitalalandoSzo-ba mentjük el
+tombFeltolt() --manuálisan feltöltjük a tömböt 3 db 2 betűs szóval Ka
+szoKivalaszt() -- Randommal kiválasztunk 1 szót a tömbből a kitalalandoSzo-ba mentjük el Kri
 
 csináld:
-	felhasznalotolBeker() -- ellenőrzött bekéréssel (2 betűs) bekérünk egy szót return bekért szó
-	ellenorzes() -- 5 db metódus
+	felhasznalotolBeker() -- ellenőrzött bekéréssel (2 betűs) bekérünk egy szót return bekért szó Da
+	ellenorzes() -- 5 db metódus  1.Ka 2.Kri 3.Da 4.Ka 5.Kri
 amíg bekertSzo == kitalalandoSzo
 
-hanyTalalatbol()
+hanyTalalatbol() Da
 )
