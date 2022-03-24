@@ -39,6 +39,15 @@ public class SzoKitalalo {
     private static void hanyTalalatbol() {
         System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
     }
-
+    static void egyJoEsRosszHelyen() {
+        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(1) || kitalalandoSzo.charAt(1) == bekertszo.charAt(0)) {
+            System.out.println("Egy betű helyes, de rossz helyen van..");
+        }
+    }
+    static void talalt() {
+        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) && kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
+            System.out.println("Ügyes vagy! Eltaláltad.");
+        }
+    }
     
 }
