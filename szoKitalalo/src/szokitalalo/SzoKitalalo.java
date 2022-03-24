@@ -1,5 +1,6 @@
 package szokitalalo;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class SzoKitalalo {
@@ -17,6 +18,11 @@ public class SzoKitalalo {
         szoTomb[0] = "tű";
         szoTomb[1] = "ló";
         szoTomb[2] = "és";
+    }
+    static void szoKivalaszt(){
+        Random rnd = new Random();
+        int melyikSzo = rnd.nextInt(3);
+        kitalalandoSzo = szoTomb[melyikSzo];
     }
 
     private static void feladatKiiras() {
@@ -47,6 +53,11 @@ public class SzoKitalalo {
     static void talalt() {
         if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) && kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
             System.out.println("Ügyes vagy! Eltaláltad.");
+        }
+    }
+    static void ketJoDeRosszHelyen(){
+        if ( kitalalandoSzo.charAt(0) == bekertszo.charAt(1) && kitalalandoSzo.charAt(1) == bekertszo.charAt(0) ){
+            System.out.println("Minkét betű helyes, de rossz helyen vannak:(");
         }
     }
     
