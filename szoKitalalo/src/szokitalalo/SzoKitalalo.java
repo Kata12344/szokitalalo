@@ -9,13 +9,11 @@ public class SzoKitalalo {
     static String kitalalandoSzo = "";
     static String bekertszo = "";
     static int talalatokSzama = 0;
-
+    static boolean ujjatek = true;
+    
     public static void main(String[] args) {
-        feladatKiiras();
-        szoKivalaszt();
-        System.out.println(kitalalandoSzo);
-        tippEllenorzes();
-        hanyTalalatbol();
+        ujrakezd();
+        elkoszones();
     }
 
     static void szoKivalaszt() {
@@ -37,10 +35,12 @@ public class SzoKitalalo {
         talalatokSzama++;
     }
 
-    private static void egyJoEsJoHelyen() {
+    static boolean egyJoEsJoHelyen() {
         if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) || kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
             System.out.println("Egy betű jó helyen van.");
+            return true;
         }
+        return false;
     }
 
     static boolean talalt() {
@@ -61,16 +61,20 @@ public class SzoKitalalo {
         return false;
     }
 
-    static void egyJoEsRosszHelyen() {
+    static boolean egyJoEsRosszHelyen() {
         if (kitalalandoSzo.charAt(0) == bekertszo.charAt(1) || kitalalandoSzo.charAt(1) == bekertszo.charAt(0)) {
             System.out.println("Egy betű helyes, de rossz helyen van..");
+            return true;
         }
+        return false;
     }
 
-    static void egySeJo() {
+    static boolean egySeJo() {
         if (kitalalandoSzo.charAt(0) != bekertszo.charAt(0) && kitalalandoSzo.charAt(1) != bekertszo.charAt(1) && kitalalandoSzo.charAt(1) != bekertszo.charAt(0) && kitalalandoSzo.charAt(0) != bekertszo.charAt(1)) {
             System.out.println("Egy betű sem jó.");
+            return true;
         }
+        return false;
     }
 
     private static void hanyTalalatbol() {
@@ -82,12 +86,31 @@ public class SzoKitalalo {
             beker();
             if (!talalt()) {
                 if (!ketJoDeRosszHelyen()) {
-                    egyJoEsJoHelyen();
-                    egyJoEsRosszHelyen();
-                    egySeJo();
+                    if (egyJoEsJoHelyen()==true){
+                        
+                    }else if (egyJoEsRosszHelyen()==true){
+                       
+                    }else if (egySeJo() == true){
+                       
+                    }
                 }
             }
         } while (!bekertszo.equals(kitalalandoSzo));
+    }
+    static void ujrakezd(){
+        Scanner sc = new Scanner(System.in);
+        while(ujjatek==true){
+            feladatKiiras();
+            szoKivalaszt();
+            System.out.println(kitalalandoSzo);
+            tippEllenorzes();
+            hanyTalalatbol();
+            System.out.println("Szeretnéd újrakezdeni a játékot? Amennyiben igen, kérlek írj be hogy true, ellenkező esetben pedig hogy false.");
+            ujjatek = sc.nextBoolean();
+        }
+    }
+    static void elkoszones(){
+        System.out.println("Köszönjük szépen hogy velünk játszottál. Reméljük élvezted és hogy még viszont láthatunk téged!");
     }
 
 }
