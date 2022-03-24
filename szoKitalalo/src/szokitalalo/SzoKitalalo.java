@@ -5,23 +5,20 @@ import java.util.Scanner;
 
 public class SzoKitalalo {
 
-    static String[] szoTomb;
+    static String[] szoTomb = new String[]{"ma","te","ki"};
     static String kitalalandoSzo = "";
     static String bekertszo = "";
     static int talalatokSzama = 0;
 
     public static void main(String[] args) {
         feladatKiiras();
-        tombFeltolt();
-        
+        szoKivalaszt();
+        System.out.println(kitalalandoSzo);
+        tippEllenorzes();
         hanyTalalatbol();
     }
 
-    static void tombFeltolt() {
-        szoTomb[0] = "tű";
-        szoTomb[1] = "ló";
-        szoTomb[2] = "és";
-    }
+  
     static void szoKivalaszt(){
         Random rnd = new Random();
         int melyikSzo = rnd.nextInt(3);
@@ -65,6 +62,21 @@ public class SzoKitalalo {
         if ( kitalalandoSzo.charAt(0) == bekertszo.charAt(1) && kitalalandoSzo.charAt(1) == bekertszo.charAt(0) ){
             System.out.println("Minkét betű helyes, de rossz helyen vannak:(");
         }
+    }
+    static void egySeJo(){
+        if (kitalalandoSzo.charAt(0) != bekertszo.charAt(0) && kitalalandoSzo.charAt(1) != bekertszo.charAt(1) && kitalalandoSzo.charAt(1) != bekertszo.charAt(0) && kitalalandoSzo.charAt(0) != bekertszo.charAt(1)) {
+            System.out.println("Egy betű sem jó.");
+        }
+    }
+    static void tippEllenorzes(){
+        do {            
+            beker();
+            talalt();
+            ketJoDeRosszHelyen();
+            egyJoEsJoHelyen();
+            egyJoEsRosszHelyen();
+            egySeJo();
+        } while (bekertszo != kitalalandoSzo);
     }
     
 }
