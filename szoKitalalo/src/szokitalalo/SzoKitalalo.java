@@ -12,18 +12,17 @@ public class SzoKitalalo {
     public static void main(String[] args) {
 
     }
-<<<<<<< HEAD
-    
-    static void tombFeltotlt(){
-      szoTomb[0] = "tű";
-      szoTomb[1] = "ló";
-      szoTomb[2] = "és";
+
+    static void tombFeltotlt() {
+        szoTomb[0] = "tű";
+        szoTomb[1] = "ló";
+        szoTomb[2] = "és";
     }
-=======
 
     private static void feladatKiiras() {
-        System.out.println("Üdvözöllek! Ez itt egy - Kata, Kriszti és Dana által készített szókitalálós játék. A gép gondol egy 2 betűs szóra, és Neked ezt kell majd kitalálnod. Írnod kell 2 betűs szavakat, a gép pedig közölni fogja veled, hogy milyen arányban egyezik az, a kitalálandő szóval.");
-    }   
+        System.out.println("Üdvözöllek! Ez itt egy - Kata, Kriszti és Dana által készített szókitalálós játék. A gép gondol egy 2 betűs szóra, és Neked ezt kell majd kitalálnod. Írnod kell 2 betűs szavakat, a gép pedig közölni fogja veled, hogy milyen arányban egyezik az, a kitalálandó szóval.");
+    }
+
     private static void beker() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Tipp: ");
@@ -32,5 +31,13 @@ public class SzoKitalalo {
         } while (bekertszo.length() != 2);
     }
 
->>>>>>> b84c4876a2d8a8b3feabf3e6333ff54472f74ca6
+    private static void egyJoEsJoHelyen() {
+        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) || kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
+            System.out.println("Egy betű jó helyen van.");
+        }
+    }
+
+    private static void hanyTalalatbol() {
+        System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
+    }
 }
