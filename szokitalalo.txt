@@ -1,0 +1,38 @@
+szokitalalo program - Kata, Kriszti, Dana
+3 db 2 betűs van, azokból választ a prorgam egyet
+és a felhasználó találgat (konkrét szavakat kell irni)
+
+
+1. kiírjuk a feladatot
+2. manuálisan elmentünk 3 db 2 betűs szót egy tömbbe, ebből a program kiválaszt egy szót, ami a kitalálandó szó lesz
+3. felhasználótól bekérjük a találatokat, ameddig nem egyenlő a program által kiválasztott szóval
+4. a gép kiírja, hogy milyen arányban egyezik a találat a kitalálandó szóval, ezek a kimenetek lehetnek:
+	-nincs benne helyes betű	
+	-van benne helyes betű, de rossz helyen, vagy jó helyen
+	-van benne 2 helyes betű de rossz sorrendben
+	-eltaláltad a szót
+5. kiírjuk, hány találatból lett kitalálva a szó
+
+
+
+globalis int[] szoTomb
+globalis String kitalalandoSzo = ""
+globalis Random
+globalis Scanner
+globalis bekertszo = ""
+globalis talalatokSzama = 0
+
+
+main(
+feladatKiiras()
+
+tombFeltolt() --manuálisan feltöltjük a tömböt 3 db 2 betűs szóval
+szoKivalaszt() -- Randommal kiválasztunk 1 szót a tömbből a kitalalandoSzo-ba mentjük el
+
+csináld:
+	felhasznalotolBeker() -- ellenőrzött bekéréssel (2 betűs) bekérünk egy szót return bekért szó
+	ellenorzes() -- 5 db metódus
+amíg bekertSzo == kitalalandoSzo
+
+hanyTalalatbol()
+)
