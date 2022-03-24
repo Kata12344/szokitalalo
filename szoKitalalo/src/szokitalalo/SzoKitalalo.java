@@ -36,8 +36,9 @@ public class SzoKitalalo {
             System.out.println("Egy betű jó helyen van.");
         }
     }
-
     private static void hanyTalalatbol() {
         System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
     }
+
+    
 }
