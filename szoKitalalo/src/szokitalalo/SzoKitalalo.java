@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class SzoKitalalo {
 
-    static String[] szoTomb = new String[]{"ma","te","ki"};
+    static String[] szoTomb = new String[]{"ma", "te", "ki"};
     static String kitalalandoSzo = "";
     static String bekertszo = "";
     static int talalatokSzama = 0;
@@ -18,8 +18,7 @@ public class SzoKitalalo {
         hanyTalalatbol();
     }
 
-  
-    static void szoKivalaszt(){
+    static void szoKivalaszt() {
         Random rnd = new Random();
         int melyikSzo = rnd.nextInt(3);
         kitalalandoSzo = szoTomb[melyikSzo];
@@ -35,6 +34,7 @@ public class SzoKitalalo {
         do {
             bekertszo = sc.nextLine();
         } while (bekertszo.length() != 2);
+        talalatokSzama++;
     }
 
     private static void egyJoEsJoHelyen() {
@@ -43,8 +43,22 @@ public class SzoKitalalo {
         }
     }
 
-    private static void hanyTalalatbol() {
-        System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
+    static boolean talalt() {
+
+        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) && kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
+            System.out.println("Ügyes vagy! Eltaláltad.");
+            bekertszo = kitalalandoSzo;
+            return true;
+        }
+        return false;
+    }
+
+    static boolean ketJoDeRosszHelyen() {
+        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(1) && kitalalandoSzo.charAt(1) == bekertszo.charAt(0)) {
+            System.out.println("Mindkét betű helyes, de rossz helyen vannak :(");
+            return true;
+        }
+        return false;
     }
 
     static void egyJoEsRosszHelyen() {
@@ -53,30 +67,27 @@ public class SzoKitalalo {
         }
     }
 
-    static void talalt() {
-        if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) && kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
-            System.out.println("Ügyes vagy! Eltaláltad.");
-        }
-    }
-    static void ketJoDeRosszHelyen(){
-        if ( kitalalandoSzo.charAt(0) == bekertszo.charAt(1) && kitalalandoSzo.charAt(1) == bekertszo.charAt(0) ){
-            System.out.println("Minkét betű helyes, de rossz helyen vannak:(");
-        }
-    }
-    static void egySeJo(){
+    static void egySeJo() {
         if (kitalalandoSzo.charAt(0) != bekertszo.charAt(0) && kitalalandoSzo.charAt(1) != bekertszo.charAt(1) && kitalalandoSzo.charAt(1) != bekertszo.charAt(0) && kitalalandoSzo.charAt(0) != bekertszo.charAt(1)) {
             System.out.println("Egy betű sem jó.");
         }
     }
-    static void tippEllenorzes(){
-        do {            
-            beker();
-            talalt();
-            ketJoDeRosszHelyen();
-            egyJoEsJoHelyen();
-            egyJoEsRosszHelyen();
-            egySeJo();
-        } while (bekertszo != kitalalandoSzo);
+
+    private static void hanyTalalatbol() {
+        System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
     }
-    
+
+    static void tippEllenorzes() {
+        do {
+            beker();
+            if (!talalt()) {
+                if (!ketJoDeRosszHelyen()) {
+                    egyJoEsJoHelyen();
+                    egyJoEsRosszHelyen();
+                    egySeJo();
+                }
+            }
+        } while (!bekertszo.equals(kitalalandoSzo));
+    }
+
 }
