@@ -10,10 +10,13 @@ public class SzoKitalalo {
     static int talalatokSzama = 0;
 
     public static void main(String[] args) {
-
+        feladatKiiras();
+        tombFeltolt();
+        
+        hanyTalalatbol();
     }
 
-    static void tombFeltotlt() {
+    static void tombFeltolt() {
         szoTomb[0] = "tű";
         szoTomb[1] = "ló";
         szoTomb[2] = "és";
@@ -36,18 +39,21 @@ public class SzoKitalalo {
             System.out.println("Egy betű jó helyen van.");
         }
     }
+
     private static void hanyTalalatbol() {
         System.out.printf("%d db találatból találtad ki a szót. \n", talalatokSzama);
     }
+
     static void egyJoEsRosszHelyen() {
         if (kitalalandoSzo.charAt(0) == bekertszo.charAt(1) || kitalalandoSzo.charAt(1) == bekertszo.charAt(0)) {
             System.out.println("Egy betű helyes, de rossz helyen van..");
         }
     }
+
     static void talalt() {
         if (kitalalandoSzo.charAt(0) == bekertszo.charAt(0) && kitalalandoSzo.charAt(1) == bekertszo.charAt(1)) {
             System.out.println("Ügyes vagy! Eltaláltad.");
         }
     }
-    
+
 }
